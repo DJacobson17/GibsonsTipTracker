@@ -1,12 +1,13 @@
 import { usePost } from "./postContent";
 
-function Input() {
+function Input({ children }) {
   const {
     ccTips,
     setCcTips,
     cashTips,
     setCashTips,
     busser,
+    solo,
     handleBusserChange,
   } = usePost();
   const handleCcTipsChange = (event) => {
@@ -53,6 +54,7 @@ function Input() {
             onChange={handleBusserChange}
           />
           <output>{busser}%</output>
+          {children}
         </div>
       </form>
     </div>

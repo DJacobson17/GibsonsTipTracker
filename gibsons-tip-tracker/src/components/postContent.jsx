@@ -6,6 +6,7 @@ function PostProvider({ children }) {
   const [ccTips, setCcTips] = useState("");
   const [cashTips, setCashTips] = useState("");
   const [busser, setBusser] = useState(20);
+  const [solo, setSolo] = useState(false);
 
   const handleBusserChange = (event) => {
     setBusser(event.target.value);
@@ -19,9 +20,11 @@ function PostProvider({ children }) {
       setCashTips,
       busser,
       setBusser,
+      solo,
+      setSolo,
       handleBusserChange,
     };
-  }, [ccTips, cashTips, busser]);
+  }, [ccTips, cashTips, busser, solo]);
 
   return <PostContext.Provider value={value}>{children}</PostContext.Provider>;
 }
